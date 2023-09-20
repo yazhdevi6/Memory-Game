@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;/*Width and height apply to all parts of the element: content, padding and borders:*/
+  font-family: "Poppins", sans-serif;
+}
+body {
+  
+  height: 1000px;
+  /background-color: red; / For browsers that do not support gradients 
+  background-image: linear-gradient(to bottom right, red, yellow);*/
+  background: #de6161;  /* fallback for old browsers */
+  background-image: linear-gradient(
+  45deg,
+  hsl(240deg 100% 20%) 0%,  
+  hsl(289deg 100% 21%) 12%, 
+  hsl(315deg 100% 27%) 23%,
+  hsl(329deg 100% 36%) 34%,
+  hsl(337deg 100% 43%) 45%,
+  hsl(357deg 91% 59%) 56%,
+  hsl(17deg 100% 59%) 67%,
+  hsl(34deg 100% 53%) 78%,
+  hsl(45deg 100% 50%) 89%,
+  hsl(55deg 100% 50%) 100%
+);
+}
+  /*width: 100%;
+  height: 100%;
+  background-image: linear-gradient(  #6f00fc 0%,#fc7900 50%,#fcc700 100%);;
+  background: linear-gradient(325deg,  #6f00fc 0%,#fc7900 50%,#fcc700 100%);*/
+
+.wrapper {
+  box-sizing: content-box;/*Width and height only apply to the content of the element:*/
+  width: 26.87em;
+  padding: 2.5em 3em;
+  background-image: linear-gradient(
+  240deg,
+  hsl(240deg 100% 20%) 0%,
+  hsl(279deg 100% 21%) 1%,
+  hsl(301deg 100% 21%) 3%,
+  hsl(317deg 100% 28%) 6%,
+  hsl(326deg 100% 34%) 9%,
+  hsl(333deg 100% 39%) 13%,
+  hsl(339deg 100% 44%) 18%,
+  hsl(354deg 88% 57%) 26%,
+  hsl(8deg 100% 61%) 39%,
+  hsl(21deg 100% 58%) 60%,
+  hsl(32deg 100% 53%) 79%,
+  hsl(41deg 100% 50%) 89%,
+  hsl(48deg 100% 50%) 96%,
+  hsl(55deg 100% 50%) 100%
+);
+
+  position: absolute;/*  THIS IS FOR THE STOP BUTTTON AND FRONT PAGE BEFORE GAME STARTS */
+  transform: translate(-50%, -50%);/*left width and up height ,centers noth horizontally and vertically*/
+  left: 50%;
+  top: 50%;
+  border-radius: 0.6em;
+  box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+}
+.game-container {
+  position: relative;         /* THIS IS FOR THE BOX CONTAINING THE CARDS*/
+  width: 100%;
+  display: grid;
+  gap: 0.6em;
+}
+.stats-container {            /*DOUBT*/
+  text-align: right;
+  margin-bottom: 1.2em;
+} 
+.stats-container span {       /* DOUBT*/
+     font-weight: 600;
+}
+.card-container {                /* THIS IS FOR THE CARDS ITSELF */
+  position: relative;
+  width: 6.25em;
+  height: 6.25em;
+  cursor: pointer;
+}
+.card-before,
+.card-after {
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #000000;               /* APPLYS THE BORDER AROUND EACH CARD ELEMENT */
+  transition: transform 0.7s ease-out;
+  backface-visibility: hidden;
+}
+.card-before {
+  background-color: rgb(207, 28, 46) ;
+  font-size: 2.8em;
+  font-weight: 600;
+}
+.card-after {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+}
+.card-container.flipped .card-before {
+  transform: rotateY(180deg);               /* THE CARD TURNS AROUND AUTOMATICALLY IF THE IT IS UNMATCHED ONE */
+}
+.card-container.flipped .card-after {      
+  transform: rotateY(0deg);                /* THE CARD DOES NOT TURN AROUND IF IT IS MATCHED ONE */
+}
+.controls-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+  45deg,
+  hsl(240deg 100% 20%) 0%,
+  hsl(289deg 100% 21%) 12%,
+  hsl(315deg 100% 27%) 23%,
+  hsl(329deg 100% 36%) 34%,          /* DOUBT (I THINK FOR LOGIN PAGE)  */
+  hsl(337deg 100% 43%) 45%,
+  hsl(357deg 91% 59%) 56%,
+  hsl(17deg 100% 59%) 67%,
+  hsl(34deg 100% 53%) 78%,
+  hsl(45deg 100% 50%) 89%,
+  hsl(55deg 100% 50%) 100%
+);
+  top: 0;
+}
+button {
+  border-color: #000000;
+  border: 5px;
+  border-radius: 0.3em;
+  padding: 1em 1.5em;
+  cursor: pointer;
+}
+#stop {
+  font-size: 1.5em;
+  display: block;
+  margin: 1.1em auto 0 auto;
+  background-color: rgb(207, 28, 46)  ;
+  color: #101010;
+}
+
+.controls-container button {
+  font-size: 1.3em;
+  box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
+}
+.hide {
+  display: none;
+}
+#result {
+  text-align: center;
+}
+#result h2 {
+  font-size: 2.5em;
+}
+#result h4 {
+  font-size: 1.8em;
+  margin: 0.6em 0 1em 0;
+}
